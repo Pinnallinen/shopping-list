@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>🛍️ Shopping List</h1>
+      <p class="subtitle">Organize your shopping by store</p>
+    </header>
+
+    <nav class="category-nav" id="categoryNav" role="tablist" aria-label="Store categories"></nav>
+
+    <main class="main-content">
+      <section class="add-item-section">
+        <h2 id="currentCategoryTitle"></h2>
+        <form class="add-form" id="addForm" autocomplete="off">
+          <div class="input-wrapper">
+            <input
+              type="text"
+              id="itemInput"
+              class="item-input"
+              placeholder="Add an item…"
+              aria-label="New item"
+              aria-autocomplete="list"
+              aria-controls="suggestions"
+              aria-expanded="false"
+            />
+            <ul class="suggestions" id="suggestions" role="listbox" aria-label="Suggestions"></ul>
+          </div>
+          <button type="submit" class="btn btn-add" aria-label="Add item">Add</button>
+        </form>
+      </section>
+
+      <section class="list-section">
+        <div class="list-header">
+          <span class="item-count" id="itemCount"></span>
+          <div class="list-actions">
+            <button class="btn btn-secondary" id="clearCheckedBtn">Remove checked</button>
+            <button class="btn btn-danger" id="clearAllBtn">Clear all</button>
+          </div>
+        </div>
+        <ul class="shopping-list" id="shoppingList" aria-label="Shopping list items"></ul>
+        <p class="empty-state" id="emptyState" hidden>No items yet — add something above!</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
